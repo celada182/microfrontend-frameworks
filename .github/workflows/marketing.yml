@@ -1,0 +1,23 @@
+name: build-marketing
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'marketing/**'
+
+defaults:
+  run:
+    working-directory: marketing
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm i
+      - run: npm run build
+
+
