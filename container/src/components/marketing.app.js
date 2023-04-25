@@ -7,7 +7,7 @@ export default () => {
   useEffect(() => {
     mount(ref.current, {
       onNavigate: () => { console.log('Container navigation in Marketing')}
-    })
+    });
   });
 
   return <div ref={ref}/>
