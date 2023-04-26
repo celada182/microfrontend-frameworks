@@ -1,8 +1,9 @@
 import React from 'react';
 import MarketingApp from "./components/marketing.app";
+import AuthApp from "./components/auth.app";
 import Header from "./components/Header";
 import {StylesProvider, createGenerateClassName} from "@material-ui/core";
-import {BrowserRouter} from "react-router-dom";
+import {BrowserRouter, Route, Switch} from "react-router-dom";
 
 // Only for material CSS class name generator
 const generateClassName = createGenerateClassName({
@@ -15,7 +16,10 @@ export default () => {
         <StylesProvider generateClassName={generateClassName}>
           <div>
             <Header />
-            <MarketingApp/>
+            <Switch>
+              <Route path="/auth" component={AuthApp}></Route>
+              <Route path="/" component={MarketingApp}></Route>
+            </Switch>
           </div>
         </StylesProvider>
       </BrowserRouter>
