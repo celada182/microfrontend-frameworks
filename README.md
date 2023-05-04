@@ -15,3 +15,9 @@ Port 8081 (config/webpack.dev.js)
 Port 8082 (config/webpack.dev.js)
 > cd auth
 > npm run start
+
+## Dashboard
+Port 8083 (config/webpack.dev.js)
+Only visible when logged in
+> cd auth
+> npm run start
