@@ -6,6 +6,7 @@ import Progress from "./components/progress";
 
 const MarketingLazy = lazy(() => import('./components/marketing.app'));
 const AuthLazy = lazy(() => import('./components/auth.app'));
+const DashboardLazy = lazy(() => import('./components/dashboard.app'));
 
 // Only for material CSS class name generator
 const generateClassName = createGenerateClassName({
@@ -24,6 +25,7 @@ export default () => {
                 <Route path="/auth">
                   <AuthLazy onSignIn={() => setIsSignedIn(true)}></AuthLazy>
                 </Route>
+                <Route path="/dashboard" component={DashboardLazy}></Route>
                 <Route path="/" component={MarketingLazy}></Route>
               </Switch>
             </Suspense>
