@@ -2,11 +2,11 @@ import React , {useRef, useEffect} from 'react';
 import {mount} from 'auth/Auth';
 import {useHistory} from "react-router-dom";
 
-export default () => {
+export default ({ onSignIn }) => {
   const ref = useRef(null);
   const history = useHistory();
 
-  useEffect(({onSignIn}) => {
+  useEffect(() => {
     const {onParentNavigate} = mount(ref.current, {
       initialPath: history.location.pathname,
       onNavigate: ({pathname: nextPathname}) => {
